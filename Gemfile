@@ -47,11 +47,15 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'ladle', group: [:test]
 
-gem 'tufts_models', github: 'curationexperts/tufts_models', ref: '47daa043447a023f15ae2ba553952bd2323a2e71'
+gem 'tufts_models', github: 'TuftsUniversity/tufts_models', branch: 'ldap_user'
 
 gem "devise"
+gem 'devise_ldap_authenticatable', '0.8.1'
 gem "devise-guests", "~> 0.3"
+gem 'user_impersonate2', :require => 'user_impersonate'
+
 gem 'blacklight-gallery', '~> 0.1.0'
 gem 'settingslogic' # for settings
 
