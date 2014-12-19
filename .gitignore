@@ -38,3 +38,6 @@ spec/fixtures/local_object_store/data01/tufts/central/dca/MISS/thumbnail_png/
 
 # Ignore ctags files
 tags
+
+# Ignore assets
+public/assets
