@@ -4,3 +4,5 @@ development:
   url: http://localhost:8983/solr/development
 test: &TEST
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/solr/test" %>
+tdldev:
+  url: http://10.250.109.24/solr/development

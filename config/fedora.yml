@@ -6,3 +6,7 @@ test: &TEST
   user: fedoraAdmin
   password: <%= Rails.application.secrets.fedora_password %>
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/fedora-test" %>
+tdldev:
+  user: fedoraAdmin
+  password: <%= Rails.application.secrets.fedora_password %>
+  url: http://mira-dev.lib.tufts.edu:8080/fedora
