@@ -146,6 +146,10 @@ class CatalogController < ApplicationController
     super
   end
 
+  def impersonate
+    @users = User.where.not(id: current_user.id)
+  end
+
   def add_to_collection
     get_solr_response_for_doc_id(params[:id])
     if ActiveFedora::Base.exists?(params[:collection_id])
