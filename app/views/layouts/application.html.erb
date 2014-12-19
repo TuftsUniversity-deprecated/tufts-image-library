@@ -30,6 +30,10 @@
   <body class="<%= render_body_class %>">
   <%= render :partial => 'shared/header_navbar' %>
 
+  <% if current_user && current_staff_user %>
+    <%= render 'user_impersonate/header' %>
+  <% end %>
+
   <%= render partial: 'shared/ajax_modal' %>
 
   <div id="main-container" class="container">

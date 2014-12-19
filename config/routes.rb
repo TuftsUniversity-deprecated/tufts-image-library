@@ -2,12 +2,13 @@ ALLOW_DOTS ||= /[^\/]+(?=\.(html|json|pptx|pdf)\z)|[^\/]+/
 
 Rails.application.routes.draw do
 
+  mount UserImpersonate::Engine => "/impersonate", as: "impersonate_engine"
   get 'about', to: 'pages#about', as: 'about'
   get 'help', to: 'pages#help', as: 'help'
   get 'contact', to: 'pages#contact', as: 'contact'
 
   resources :downloads, only: [:show], constraints: { id: ALLOW_DOTS }
-
+  get 'catalog/impersonate', to: 'catalog#impersonate', as: 'catalog_impersonate'
   patch 'catalog/:id/add_to_collection', to: 'catalog#add_to_collection', as: 'add_to_collection_catalog', constraints: { id: ALLOW_DOTS }
 
   resources :course_collections, constraints: { id: ALLOW_DOTS } do
