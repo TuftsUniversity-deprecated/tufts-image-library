@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'ladle'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -18,6 +19,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  @ldap_server = Ladle::Server.new(:quiet => true, :ldif => File.expand_path('../fixtures/tufts_ldap.ldif', __FILE__)).start
+
   config.include Devise::TestHelpers, type: :controller
 
   config.include FactoryGirl::Syntax::Methods
