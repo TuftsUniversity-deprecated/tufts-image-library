@@ -30,5 +30,5 @@ tdldev:
   database: ests_tdil
   pool: 5
   username: ests_tdil_admin
-  password: N0Ch31!
+  password: <%= Rails.application.secrets.database_password %>
   socket: /var/lib/mysql/mysql.sock
