@@ -9,4 +9,4 @@ test: &TEST
 tdldev:
   user: fedoraAdmin
   password: <%= Rails.application.secrets.fedora_password %>
-  url: http://mira-dev.lib.tufts.edu:8080/fedora
+  url: http://10.250.109.24:8080/fedora
