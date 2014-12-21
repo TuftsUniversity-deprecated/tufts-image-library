@@ -41,4 +41,3 @@ production:
   username: ests_tdil_admin
   password: <%= Rails.application.secrets.database_password %>
   socket: /var/lib/mysql/mysql.sock
-
