@@ -37,7 +37,12 @@ test:
   preview_fedora_url: 'http://localhost:8983/fedora'
 production:
   <<: *defaults
-  tdl_feedback_address: "deborah.kaplan@tufts.edu"
-  object_store_root: "/tdr/dcadata02/tufts/central/dca/fake_bucket"
-  processing_url: "http://processing01.lib.tufts.edu:8080"
+  tdl_feedback_address: "erin.faulder@tufts.edu"
+  processing_url: "SKIP"
   repository_url: "http://repository01.lib.tufts.edu:8080"
+  object_store_root: '/tdr'
+  object_store_base: '/'
+  object_store_dca: 'data05/tufts/central/dca'
+  object_store_tisch: 'ase_data/tisch01'
+  preview_fedora_prod_url: 'http://repository01.lib.tufts.edu:8080/fedora'
+  preview_dl_prod_url: 'http://dl.tufts.edu'
