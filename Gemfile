@@ -80,3 +80,8 @@ group :debug do
   gem 'byebug', require: false
   gem 'launchy'
 end
+
+group :production, :tdldev do
+  gem 'passenger'
+  gem 'solrizer'
+end
