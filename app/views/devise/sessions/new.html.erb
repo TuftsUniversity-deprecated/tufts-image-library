@@ -1,9 +1,9 @@
 <h2>Sign in</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: 'inline-form well span3'}) do |f| %>
-  <div><%= f.label :username, :class=>'placeholder' %>
+  <div><%= f.label :username,'Tufts Username', :class=>'placeholder' %>
     <%= f.text_field :username, :autofocus => true, :placeholder=>'Username', :autofocus=>true %></div>
-  <div><%= f.label :password, :class=>'placeholder' %>
+  <div><%= f.label :password, 'Tufts Password',:class=>'placeholder' %>
     <%= f.password_field :password, :autofocus => false, :placeholder=>'Password' %></div>
   <% if devise_mapping.rememberable? -%>
     <div><label class="checkbox">
