@@ -55,6 +55,7 @@ gem "devise"
 gem 'devise_ldap_authenticatable', '0.8.1'
 gem "devise-guests", "~> 0.3"
 gem 'user_impersonate2', :require => 'user_impersonate'
+gem 'is_it_working'
 
 gem 'blacklight-gallery', '~> 0.1.0'
 gem 'settingslogic' # for settings
