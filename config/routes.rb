@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   mount UserImpersonate::Engine => "/impersonate", as: "impersonate_engine"
   get 'about', to: 'pages#about', as: 'about'
+  get 'help', to: 'pages#help', as: 'help'
   get 'contact', to: 'pages#contact', as: 'contact'
 
   resources :downloads, only: [:show], constraints: { id: ALLOW_DOTS }
