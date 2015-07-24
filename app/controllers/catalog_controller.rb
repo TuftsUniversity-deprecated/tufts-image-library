@@ -8,7 +8,9 @@ class CatalogController < ApplicationController
   include Hydra::Controller::ControllerBehavior
 
   CatalogController.solr_search_params_logic += [:only_displays_in_trove, :only_images_and_collections,
-    :exclude_root_collection, :exclude_soft_deleted]
+    :exclude_root_collection, :exclude_soft_deleted, :exclude_drafts]
+
+  before_filter :enforce_show_permissions, :only=>:show
 
   configure_blacklight do |config|
     config.view.delete(:slideshow)
@@ -183,9 +185,24 @@ protected
     solr_parameters[:fq] << "displays_ssim:trove"
   end
 
+  def exclude_drafts(solr_parameters,user_parameters)
+    solr_parameters[:fq] ||= []
+    solr_parameters[:fq] << "-id:draft*"
+  end
+
   def exclude_soft_deleted(solr_parameters, user_parameters)
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << "NOT #{ActiveFedora::SolrService.solr_name("object_state", :stored_sortable)}:\"D\""
+  end
+
+  def enforce_show_permissions(opts={})
+    id = params[:id]
+    unless id.nil?
+      if (id[/^draft/])
+        flash[:alert] = "Draft objects are not available in Trove."
+        redirect_to(:action=>'index', :q=>nil, :f=>nil) and return false
+      end
+    end
   end
 
   # Override method from blacklight to check for 'trove' display
