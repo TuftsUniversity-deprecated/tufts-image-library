@@ -261,6 +261,9 @@ GEM
       rack
       rake (>= 0.8.1)
     rack (1.5.2)
+    rack-google-analytics (1.2.0)
+      actionpack
+      activesupport
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
@@ -472,6 +475,7 @@ DEPENDENCIES
   mysql2
   nprogress-rails
   passenger
+  rack-google-analytics
   rails (= 4.1.6)
   rspec-rails
   sass-rails (~> 4.0.3)
