@@ -27,7 +27,7 @@ class PowerPointCollectionExporter < CollectionExporter
 
   # TODO: Handle the case where there is no data for a field
   def export
-    export_file_name = Tempfile.new([export_base_file_name, '.pptx'], export_dir).path
+    export_file_name = Tempfile.new([Shellwords.escape(export_base_file_name), '.pptx'], export_dir).path
 
     # Open a bi-directional connection to a Java process that
     # will generate the powerpoint file.  Send data to the Java
