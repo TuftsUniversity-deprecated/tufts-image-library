@@ -4,7 +4,7 @@ rvm:
 
 notifications:
   email:
-    - justin@curationexperts.com
+    - mike.korcynski@tufts.edu
 
 before_install:
   - sudo apt-get update
