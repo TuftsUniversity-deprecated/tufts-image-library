@@ -29,6 +29,30 @@ describe CatalogController do
         CourseCollection.delete_all
       end
 
+      describe "with draft and published objects" do
+        let!(:draft_record) {
+          TuftsImage.build_draft_version(displays: ['trove'], title: "draft image").tap do |r|
+            r.save!
+          end
+        }
+
+        let!(:published_record) {
+          TuftsImage.create!(displays: ['trove'], title: "published image", pid: "tufts:123")
+        }
+
+        let!(:published_uc_record) {
+          TuftsImage.create!(displays: ['trove'], title: "published image", pid: "tufts.uc:123")
+        }
+
+        it 'displays only the published records' do
+          get :index
+          records = assigns[:document_list].map(&:id)
+
+          expect(records).to include(published_record.pid)
+          expect(records).to include(published_uc_record.pid)
+        end
+      end
+
       describe "the sidebar" do
         let!(:my_collection1) { create(:personal_collection, user: user) }
         let!(:my_collection2) { create(:personal_collection, user: user) }
@@ -44,8 +68,8 @@ describe CatalogController do
 
       describe "the search results" do
         let!(:course_collection) { create(:course_collection) }
-        let!(:image) { create(:tufts_image, displays: ['trove']) }
-        let(:soft_deleted_image) { create(:tufts_image, displays: ['trove']) }
+        let!(:image) { TuftsImage.create!(displays: 'trove', title: 'published image', pid: "tufts:123") }
+        let(:soft_deleted_image) { TuftsImage.create(displays: ['trove'], title: 'soft-deleted', pid: "tufts:456") }
         let!(:template) { create(:tufts_template, displays: ['trove']) }
         let!(:pdf) { create(:tufts_pdf, displays: ['trove']) }
 
@@ -86,24 +110,46 @@ describe CatalogController do
     end
 
     describe "GET show" do
-      context 'images with "trove" display' do
-        let(:trove_img) { create(:image, displays: ['trove']) }
+      let(:published_trove_image) do
+        TuftsImage.create!(displays: ['trove'], title: 'published trove image', pid: "tufts:123")
+      end
 
+      let(:published_dl_image) do
+        TuftsImage.create!(displays: ['dl'], title: 'published dl image', pid: "tufts:4321")
+      end
+
+      context 'published images with "trove" display' do
         it 'is successful' do
-          get :show, id: trove_img.pid
-          expect(response).to render_template(:show)
+          get :show, id: published_trove_image.pid
+
           expect(response).to be_successful
+          expect(response).to render_template(:show)
           expect(assigns[:document]).to_not be_nil
         end
       end
 
-      context 'images with non-trove display' do
-        let(:dl_img) { create(:image, displays: ['dl']) }
+      context 'published images with non-trove display' do
         it 'denies access' do
-          get :show, id: dl_img.pid
+          get :show, id: published_dl_image.pid
+
           expect(response).to redirect_to root_path
           expect(flash[:alert]).to match(/You do not have sufficient access/)
         end
+      end
+
+      context 'for draft objects' do
+
+        let(:draft_image) do
+          TuftsImage.build_draft_version(displays: ['trove'], title: 'draft image').tap do |img|
+            img.save!
+          end
+        end
+
+        it 'denies access to draft objects' do
+          get :show, id: draft_image
+          expect(response.status).to eq(404)
+        end
+
       end
     end
 
