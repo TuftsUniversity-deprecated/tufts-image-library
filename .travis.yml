@@ -1,0 +1,26 @@
+language: ruby
+rvm:
+  - 2.1
+
+notifications:
+  email:
+    - mike.korcynski@tufts.edu
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install libreoffice
+
+before_script:
+  - bundle exec rake config:copy db:setup
+
+script:
+  - bundle exec rake ci
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+bundler_args: --without development debug
+
+services:
+  - redis-server

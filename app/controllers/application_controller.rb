@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
     render :text => exception, :status => 500
   end
   # Adds a few additional behaviors into the application controller
-   include Blacklight::Controller
+  include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on
   # these methods in order to perform user specific actions.
 
@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper ThumbnailHelper
+
+  def not_found
+    render 'public/404', status: :not_found, content_type: 'text/html', layout: false
+  end
 end

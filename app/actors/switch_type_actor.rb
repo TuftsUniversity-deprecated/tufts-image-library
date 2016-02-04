@@ -21,11 +21,16 @@ class SwitchTypeActor
     end
 
     def update_collection_type(collection)
+      if collection.inner_object.is_a?(ActiveFedora::SolrDigitalObject)
+        collection.reify!
+      end
+
       collection.clear_relationship(:has_model)
       collection.add_relationship(:has_model, to_type.to_class_uri)
       collection.child_collections.each do |child|
         update_collection_type(child)
       end
+
       collection.save
     end
 end

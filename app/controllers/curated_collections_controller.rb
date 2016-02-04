@@ -120,7 +120,7 @@ class CuratedCollectionsController < ApplicationController
       # transpose so we can drop non-trove members with their positions
       transpose.
       # only show members visible to trove
-      select { |(member,_)| member.displays.include?('trove') && member.state == 'A' }.
+      select { |(member,_)| member.displays.include?('trove') && (member.inner_object.is_a?(ActiveFedora::SolrDigitalObject) ? member.inner_object.solr_doc['object_state_ssi'] : member.state) == 'A' }.
       # transpose back so we get something like this: [members, positions]
       transpose
     [(members || []), (positions || [])]
