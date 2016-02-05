@@ -209,7 +209,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.2)
-    ladle (1.0.0)
+    ladle (1.0.1)
       open4 (~> 1.0)
     launchy (2.4.2)
       addressable (~> 2.3)
@@ -480,7 +480,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
-  ladle
+  ladle (~> 1.0.1)
   launchy
   mysql2
   nprogress-rails

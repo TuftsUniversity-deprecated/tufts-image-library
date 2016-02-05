@@ -47,7 +47,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'ladle', group: [:test]
+gem 'ladle', '~> 1.0.1', group: [:test]
 
 gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.0.6"
 
