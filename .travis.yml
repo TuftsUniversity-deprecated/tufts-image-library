@@ -9,6 +9,7 @@ notifications:
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install libreoffice
+  - gem install bundler -v 1.9.4
 
 before_script:
   - bundle exec rake config:copy db:setup
