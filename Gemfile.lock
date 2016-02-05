@@ -1,7 +1,7 @@
 GIT
-  remote: git://github.com/curationexperts/tufts_models.git
-  revision: 8a0a475ca705886858a7939af8aa29f6db2f8b29
-  ref: v4.0.0.rc4
+  remote: git://github.com/TuftsUniversity/tufts_models.git
+  revision: 4147c8c9c0bd145d2bced53cc8df2b66b9cb69a3
+  tag: 4.0.6
   specs:
     tufts_models (0.0.1)
       active-fedora (~> 7.1)
@@ -11,9 +11,10 @@ GIT
       hydra-editor
       hydra-role-management
       jettywrapper (>= 1.8, < 2)
+      qa (= 0.5.0)
       railties (>= 3.2, < 5)
       resque-status
-      rmagick (= 2.13.2)
+      rmagick (= 2.15.2)
       settingslogic
       titleize
 
@@ -55,6 +56,8 @@ GEM
       activemodel (= 4.1.6)
       activesupport (= 4.1.6)
       arel (~> 5.0.0)
+    activerecord-import (0.11.0)
+      activerecord (>= 3.0)
     activesupport (4.1.6)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -178,7 +181,7 @@ GEM
       hydra-access-controls (= 7.2.2)
       hydra-core (= 7.2.2)
       rails (>= 3.2.6)
-    hydra-role-management (0.2.1)
+    hydra-role-management (0.2.2)
       blacklight
       bootstrap_form
       cancancan
@@ -248,6 +251,12 @@ GEM
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
     orm_adapter (0.5.0)
+    qa (0.5.0)
+      activerecord-import
+      deprecation
+      nokogiri (~> 1.6.0)
+      rails (>= 3.2.13, < 5.0)
+      rest-client
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -307,7 +316,7 @@ GEM
       rdf (~> 1.1)
     rdoc (4.1.2)
       json (~> 1.4)
-    redis (3.2.1)
+    redis (3.2.2)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
     ref (1.0.5)
@@ -324,7 +333,7 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rmagick (2.13.2)
+    rmagick (2.15.2)
     rsolr (1.0.10)
       builder (>= 2.1.2)
     rspec-core (3.1.7)
@@ -363,8 +372,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     settingslogic (2.0.9)
-    sinatra (1.4.6)
-      rack (~> 1.4)
+    sinatra (1.4.7)
+      rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     slop (3.6.0)
@@ -408,7 +417,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    titleize (1.3.0)
+    titleize (1.4.0)
     turbolinks (2.5.2)
       coffee-rails
     tzinfo (1.2.2)

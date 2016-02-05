@@ -48,7 +48,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'tufts_models', github: 'curationexperts/tufts_models', ref: 'v4.0.0.rc4'
+#gem 'tufts_models', github: 'curationexperts/tufts_models', ref: 'v4.0.0.rc4'
+#gem 'tufts_models', :path => '../tufts_models4rspec'
+gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.0.6"
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
