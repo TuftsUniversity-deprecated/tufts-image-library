@@ -50,7 +50,8 @@ gem 'spring',        group: :development
 
 #gem 'tufts_models', github: 'curationexperts/tufts_models', ref: 'v4.0.0.rc4'
 #gem 'tufts_models', :path => '../tufts_models4rspec'
-gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.0.6"
+#gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.0.6"
+gem 'tufts_models', github: 'TuftsUniversity/tufts_models', branch: 'master'
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
