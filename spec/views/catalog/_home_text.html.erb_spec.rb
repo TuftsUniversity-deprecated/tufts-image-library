@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'catalog/_home_text' do
   context "with featured images" do

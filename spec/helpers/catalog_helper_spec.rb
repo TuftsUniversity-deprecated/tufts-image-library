@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe CatalogHelper do
   let(:image) { TuftsImage.create(pid: 'tufts:777', title: 'foo', displays: ['trove']) }

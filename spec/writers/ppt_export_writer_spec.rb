@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe '#coordinates' do
   subject { PptExportWriter.new(double, $stdout, 'tmp/test.pptx') }

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 feature 'Copying Collections:' do
   let(:course_collection) { create(:course_collection, member_ids: [image.id]) }

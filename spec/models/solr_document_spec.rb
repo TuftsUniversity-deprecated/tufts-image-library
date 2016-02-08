@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe SolrDocument do
   let(:doc) { SolrDocument.new('description_tesim' => ['My image']) }

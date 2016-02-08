@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe ThumbnailHelper do
   let(:solr_doc) { SolrDocument.new(id: 'tufts:999', active_fedora_model_ssi: 'TuftsImage') }
