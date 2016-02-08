@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe CourseCollectionsController do
   let(:image) { create(:image) }

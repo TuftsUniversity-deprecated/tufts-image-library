@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 feature 'Catalog Search:' do
   let(:user) { FactoryGirl.create(:user) }

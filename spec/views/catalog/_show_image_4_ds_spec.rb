@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'catalog/_show_image_4_ds.html.erb' do
 

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe "Overriding the find method" do
   let!(:course_collection) { create(:course_collection) }

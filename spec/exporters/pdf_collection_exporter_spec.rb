@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe PdfCollectionExporter do
   let(:timestamp) { '2012_12_25_051545' }

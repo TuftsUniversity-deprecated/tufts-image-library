@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'catalog/_index_gallery_default' do
   let(:description) {
