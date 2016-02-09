@@ -14,7 +14,19 @@ class User < ActiveRecord::Base
   # user class to get a user-displayable login/identifier for
   # the account.
   def to_s
-    user_key
+    self.user_key
+  end
+
+  def display_name  #update this method to return the string you would like used for the user name stored in fedora objects.
+    if Rails.env.test?
+      self.username
+    else
+      Devise::LDAP::Adapter.get_ldap_param(self.username,"tuftsEduDisplayNameLF")[0]
+    end
+  end
+ 
+  def user_key
+    self.username
   end
 
   def personal_collection_proxy
