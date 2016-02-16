@@ -102,6 +102,18 @@ describe CourseCollectionsController do
           expect(assigns[:position_of_first_flattened_member]).to eq 1
         end
       end
+
+      context "when the only member is an empty collection" do
+        let(:sub_collection) { create(:course_collection, members: []) }
+        before do
+          collection.members = [sub_collection]
+          collection.save!
+        end
+        it "does not display a slideshow link" do
+          get :show, id: collection
+          expect(assigns[:position_of_first_flattened_member]).to eq nil
+        end
+      end
     end
 
     describe "PATCH 'append_to'" do
