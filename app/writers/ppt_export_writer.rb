@@ -41,6 +41,9 @@ class PptExportWriter
       # Send the metadata and file path for each individual image slide
       coords = coordinates(path)
 
+      # Fixes TDLR-562 some fields loading from object
+      image.reify!
+
       image_slide = {
           title: image.title,
           creator: image.creator,
