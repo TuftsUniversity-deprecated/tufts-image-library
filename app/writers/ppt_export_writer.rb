@@ -47,7 +47,7 @@ class PptExportWriter
       image_slide = {
           title: image.title,
           creator: image.creator,
-          date: image.date_created,
+          date: image.date,
           description: image.description,
           imagePath: path,
           x: coords[:x],

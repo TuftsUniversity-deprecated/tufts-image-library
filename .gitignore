@@ -23,6 +23,7 @@ config/ldap.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log
 /tmp
 
 # Ignore jetty data and config files
@@ -44,3 +45,4 @@ public/assets
 
 # Ignore utils
 utils/
+.byebug_history
