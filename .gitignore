@@ -23,6 +23,7 @@ config/ldap.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+/log
 /tmp
 
 # Ignore jetty data and config files
@@ -38,3 +39,4 @@ spec/fixtures/local_object_store/data01/tufts/central/dca/MISS/thumbnail_png/
 
 # Ignore ctags files
 tags
+.byebug_history
