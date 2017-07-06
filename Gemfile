@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
+gem 'rake', '< 11.0'
 gem 'sqlite3'
 gem 'hydra-head', '~> 7.2.1'
 gem 'blacklight', '~> 5.7.1'
