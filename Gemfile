@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 gem 'rake', '< 11.0'
 gem 'sqlite3'
-gem 'hydra-head', '~> 7.2.1'
-gem 'blacklight', '~> 5.7.1'
+gem 'hydra-head', '7.2.2'
+gem 'blacklight', '5.7.1'
 gem 'active-fedora', '7.1.2'
 gem 'hydra-editor', '0.5.1'
 gem 'active-triples', '0.2.3'
@@ -52,7 +52,7 @@ gem 'ladle', '~> 1.0.1', group: [:test]
 
 gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.0.7"
 
-gem "devise"
+gem "devise", '3.4.0'
 gem 'devise_ldap_authenticatable', '0.8.1'
 gem "devise-guests", "~> 0.3"
 gem 'user_impersonate2', :require => 'user_impersonate'
