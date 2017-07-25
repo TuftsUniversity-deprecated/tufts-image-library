@@ -50,7 +50,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'ladle', '~> 1.0.1', group: [:test]
 
-gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.0.7"
+gem "tufts_models", github: "TuftsUniversity/tufts_models", tag: "4.1.0-prelease9"
 
 gem "devise", '3.4.0'
 gem 'devise_ldap_authenticatable', '0.8.1'
