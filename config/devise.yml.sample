@@ -1,0 +1,2 @@
+environment:
+  secret_key = '82222b49f18baaaa978e86b4933b2ffa06e45a518a4d915fc314deee5bbf7155dcbec93b6fcc91be7c8baf2262a89ef16b8243835cec20800cbd0bf7fe23424c'
