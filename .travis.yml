@@ -14,7 +14,6 @@ before_install:
 before_script:
   - bundle exec rake config:copy db:setup
   - cp config/ldap.yml.sample config/ldap.yml
-  - cp config/devise.yml.sample config/devise.yml
 script:
   - bundle exec rake ci
 

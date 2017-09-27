@@ -1,7 +1,7 @@
 namespace :config do
   desc "copy sample application config files"
   task :copy do
-    %w(secrets.yml java.yml feature_data.yml).each do |file|
+    %w(secrets.yml java.yml feature_data.yml devise.yml).each do |file|
       puts `cp -v "config/#{file}.sample" "config/#{file}"`
     end
 
